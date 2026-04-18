@@ -23,18 +23,56 @@
  *
  */
 
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
+const NASA_MERCURY_URL =
+  "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar-system/mercury/images/messenger_high_resolution_view_of_mercury_pia_13840.jpg";
+const NASA_VENUS_URL =
+  "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar-system/mercury/images/mariner_10_first_image_of_mercury_03_23_1974_PIA00437-1920x640.jpg";
+const MARS_NASA_URL =
+  "https://science.nasa.gov/resource/global-color-views-of-mars/";
 
-// This is an array of strings (TV show titles)
-let titles = [
-  "Fresh Prince of Bel Air",
-  "Curb Your Enthusiasm",
-  "East Los High",
+// This is an array of objects (planets)
+let planets = [
+  {
+    name: "Mercury",
+    type: "Planet",
+    surface: "Terrestrial",
+    Moons: 0,
+  },
+    {
+    name: "Venus",
+    type: "Planet",
+    surface: "Terrestrial",
+    Moons: 0,
+  },
+
+    {
+    name: "Earth",
+    type: "Planet",
+    surface: "Terrestrial",
+    Moons: 1,
+  },
+    {
+    name: "Mars",
+    type: "Planet",
+    surface: "Terrestrial",
+    Moons: 2,
+  },
+  {
+    name: "Jupiter",
+    type: "Planet",
+    surface: "Gas",
+    Moons: 95,
+  },
+];
+
+//an array of satellite ojects (asteroids and moons)
+let satellites = [
+    {
+    name: "Eros",
+    type: "Moon",
+    surface: "Terrestrial"
+  },
+  
 ];
 // Your final submission should have much more data than this, and
 // you should use more than just an array of strings to store it all.
@@ -45,40 +83,40 @@ function showCards() {
   cardContainer.innerHTML = "";
   const templateCard = document.querySelector(".card");
 
-  for (let i = 0; i < titles.length; i++) {
-    let title = titles[i];
+  for (let i = 0; i < planets.length; i++) {
+    let planet = planets[i];
 
     // This part of the code doesn't scale very well! After you add your
     // own data, you'll need to do something totally different here.
     let imageURL = "";
     if (i == 0) {
-      imageURL = FRESH_PRINCE_URL;
+      imageURL = NASA_MERCURY_URL;
     } else if (i == 1) {
-      imageURL = CURB_POSTER_URL;
+      imageURL = NASA_VENUS_URL;
     } else if (i == 2) {
-      imageURL = EAST_LOS_HIGH_POSTER_URL;
+      imageURL = MARS_NASA_URL;
     }
 
     const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, title, imageURL); // Edit title and image
+    editCardContent(nextCard, planet, imageURL); // Edit title and image
     cardContainer.appendChild(nextCard); // Add new card to the container
   }
 }
 
-function editCardContent(card, newTitle, newImageURL) {
+function editCardContent(card, planet, newImageURL) {
   card.style.display = "block";
 
   const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = newTitle;
+  cardHeader.textContent = planet.name;
 
   const cardImage = card.querySelector("img");
   cardImage.src = newImageURL;
-  cardImage.alt = newTitle + " Poster";
+  cardImage.alt = planet.name + " Image";
 
   // You can use console.log to help you debug!
   // View the output by right clicking on your website,
   // select "Inspect", then click on the "Console" tab
-  console.log("new card:", newTitle, "- html: ", card);
+  console.log("new card:", planet, "- html: ", card);
 }
 
 // This calls the addCards() function when the page is first loaded
@@ -91,7 +129,8 @@ function quoteAlert() {
   );
 }
 
+//Bi - do different function 
 function removeLastCard() {
-  titles.pop(); // Remove last item in titles array
+  planets.pop(); // Remove last item in titles array
   showCards(); // Call showCards again to refresh
 }
