@@ -1,6 +1,6 @@
 Goal: Create a catalog of planetary and satellite (moons) objects that have cards that present information (like size, distance from Earth) 
 
-Changes made: 
+Update 1 changes made: 
 - Changed array of strings to an array of string objects "Planets"
 - Created array of objects "Satellites"
 - Modified already existing functions with new array name but WIP
