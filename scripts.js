@@ -1,136 +1,105 @@
-/**
- * Data Catalog Project Starter Code - SEA Stage 2
- *
- * This file is where you should be doing most of your work. You should
- * also make changes to the HTML and CSS files, but we want you to prioritize
- * demonstrating your understanding of data structures, and you'll do that
- * with the JavaScript code you write in this file.
- *
- * The comments in this file are only to help you learn how the starter code
- * works. The instructions for the project are in the README. That said, here
- * are the three things you should do first to learn about the starter code:
- * - 1 - Change something small in index.html or style.css, then reload your
- *    browser and make sure you can see that change.
- * - 2 - On your browser, right click anywhere on the page and select
- *    "Inspect" to open the browser developer tools. Then, go to the "console"
- *    tab in the new window that opened up. This console is where you will see
- *    JavaScript errors and logs, which is extremely helpful for debugging.
- *    (These instructions assume you're using Chrome, opening developer tools
- *    may be different on other browsers. We suggest using Chrome.)
- * - 3 - Add another string to the titles array a few lines down. Reload your
- *    browser and observe what happens. You should see a fourth "card" appear
- *    with the string you added to the array, but a broken image.
- *
- */
+// 
+//debugging
+console.log("JS loaded");
+console.log(document.getElementById("search"));
 
-const NASA_MERCURY_URL =
-  "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar-system/mercury/images/messenger_high_resolution_view_of_mercury_pia_13840.jpg";
-const NASA_VENUS_URL =
-  "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar-system/mercury/images/mariner_10_first_image_of_mercury_03_23_1974_PIA00437-1920x640.jpg";
-const MARS_NASA_URL =
-  "https://science.nasa.gov/resource/global-color-views-of-mars/";
+//TODO: Add more data
 
-// This is an array of objects (planets)
-let planets = [
+//Creating an array of objects (planets) from csv file
+//moved urls inside the array
+const planets = [
   {
-    name: "Mercury",
-    type: "Planet",
-    surface: "Terrestrial",
-    Moons: 0,
+    name: "Mercury", type: "Planet", surface: "Terrestrial", moons: 0, day_length: 58.64, image: "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar-system/mercury/images/messenger_high_resolution_view_of_mercury_pia_13840.jpg",
   },
     {
-    name: "Venus",
-    type: "Planet",
-    surface: "Terrestrial",
-    Moons: 0,
-  },
-
-    {
-    name: "Earth",
-    type: "Planet",
-    surface: "Terrestrial",
-    Moons: 1,
+    name: "Venus", type: "Planet", surface: "Terrestrial", moons: 0, day_length: 243.01, image: "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/general/images/pia00271/PIA00271~large.jpg",
   },
     {
-    name: "Mars",
-    type: "Planet",
-    surface: "Terrestrial",
-    Moons: 2,
+    name: "Earth", type: "Planet", surface: "Terrestrial", moons: 1, day_length: 0.99, image: "https://www.nasa.gov/wp-content/uploads/2023/03/187_1003705_americas_dxm.png",
   },
-  {
-    name: "Jupiter",
-    type: "Planet",
-    surface: "Gas",
-    Moons: 95,
+    {
+    name: "Mars", type: "Planet", surface: "Terrestrial", moons: 2, day_length: 1.02, image: "https://images-assets.nasa.gov/image/PIA02653/PIA02653~large.jpg",
+  },
+    {
+    name: "Jupiter", type: "Planet", surface: "Gas", moons: 95, day_length: 0.41, image: "https://images-assets.nasa.gov/image/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~large.jpg",
+  },
+    {
+  name: "Saturn", type: "Planet", surface: "Gas", moons: 292, day_length: 0.44, image: "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia05/pia05389/jpeg/PIA05389.jpg",
+  },
+    {
+  name: "Uranus", type: "Planet", surface: "Ice", moons: 29, day_length: 0.71, image: "https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg",
+  },
+    {
+  name: "Neptune", type: "Planet", surface: "Gas", moons: 16, day_length: 0.67, image: "https://images-assets.nasa.gov/image/PIA01492/PIA01492~large.jpg",
   },
 ];
 
-//an array of satellite ojects (asteroids and moons)
-let satellites = [
-    {
-    name: "Eros",
-    type: "Moon",
-    surface: "Terrestrial"
-  },
-  
-];
-// Your final submission should have much more data than this, and
-// you should use more than just an array of strings to store it all.
 
-// This function adds cards the page to display the data in the array
+// This function adds cards to the page to display the data in the array
+//Each card will display the objects information and image
 function showCards() {
+
+  //debugging: checking if it was actually an array
+  console.log("planetsToShow:", planets);
+  console.log("is array?", Array.isArray(planets));
+
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
-  const templateCard = document.querySelector(".card");
 
-  for (let i = 0; i < planets.length; i++) {
-    let planet = planets[i];
+  const templateCard = document.getElementById("template-card");
 
-    // This part of the code doesn't scale very well! After you add your
-    // own data, you'll need to do something totally different here.
-    let imageURL = "";
-    if (i == 0) {
-      imageURL = NASA_MERCURY_URL;
-    } else if (i == 1) {
-      imageURL = NASA_VENUS_URL;
-    } else if (i == 2) {
-      imageURL = MARS_NASA_URL;
-    }
-
-    const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, planet, imageURL); // Edit title and image
-    cardContainer.appendChild(nextCard); // Add new card to the container
-  }
+  //loop that creates the card
+  planets.forEach(planet =>{
+    const cardClone = templateCard.cloneNode(true);
+    cardClone.style.display = "block";
+    editCardContent(cardClone, planet);
+    cardContainer.appendChild(cardClone);
+  });
+//debugging
+  console.log(planets);
 }
 
-function editCardContent(card, planet, newImageURL) {
-  card.style.display = "block";
+//creates card information and image
+function editCardContent(card, planet) {
 
+  //fills placeholder spot with planet name
   const cardHeader = card.querySelector("h2");
   cardHeader.textContent = planet.name;
 
+  //planet image
   const cardImage = card.querySelector("img");
-  cardImage.src = newImageURL;
-  cardImage.alt = planet.name + " Image";
+  cardImage.src = planet.image;
+  cardImage.alt = `${planet.name} image`;
 
-  // You can use console.log to help you debug!
-  // View the output by right clicking on your website,
-  // select "Inspect", then click on the "Console" tab
+ //loop to fill placeholders with planet data
+  const fields = ["type", "surface", "moons", "day_length"];
+
+  fields.forEach(field => { 
+    const element = card.querySelector(`.${field} span`);
+    element.textContent = planet[field];
+  });
+
+ //debugging
   console.log("new card:", planet, "- html: ", card);
 }
 
 // This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", showCards);
 
-function quoteAlert() {
+
+//Changed button functions to link to the NASA Homepage
+function NasaLink(){
   console.log("Button Clicked!");
-  alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!",
-  );
+  window.open("https://www.nasa.gov", "_blank");
 }
 
-//Bi - do different function 
-function removeLastCard() {
-  planets.pop(); // Remove last item in titles array
-  showCards(); // Call showCards again to refresh
-}
+
+//Search function
+//TODO
+
+
+
+
+//Filter
+//TODO
+
