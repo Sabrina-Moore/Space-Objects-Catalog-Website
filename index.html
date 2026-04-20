@@ -4,25 +4,40 @@
     <title>SOLAR SYSTEM PLANETARY BODIES</title>
     <meta name="description" content="A catalog of planets, satellites and man-made objects in our solar system" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
   </head>
 
   <body>
+    <!--main header on page-->
     <header class="main-header">
       <h1 class="title">Earth's Solar System</h1>
     </header>
+    
+    <!--search bar-->
+    <div class="search_wrapper">
+      <label for="search">Search</label>
+      <input type="search" id="search">
+    </div>
+
+    <!--boxes/cards displaying the objects-->
     <div id="card-container"></div>
-    <div class="card" style="display: none">
+    <div class="card" id="template-card" style="display: none">
       <div class="card-content">
-        <h2>Planetary Body</h2>
-        <img src="" alt="Planet Image" />
-        <!--removed built in built points here and moved functionality to script.js-->
-        <ul class=""planet-info"></ul>
+        <!--removed built in bullet points and added placeholders for planet data-->
+        <h2></h2>
+        <img alt="" />
+        <p class="type">CLASSIFICATION: <span></span></p>
+        <p class="surface">SURFACE TYPE: <span></span></p>
+        <p class="moons">NUMBER OF MOONS: <span></span></p>
+        <p class="day_length">DAY LENGTH: <span></span></p>
+        <ul class="planet-info"></ul>
       </div>
     </div>
+
+    <!--footer and buttons on page-->
     <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
-      <button onclick="removeLastCard()">Remove A Card!</button>
+      <!--TODO: Buttons that go straight to NASA home pages-->
+      <button onclick="NasaLink()">NASA Homepage</button>
     </div>
   </body>
 </html>
