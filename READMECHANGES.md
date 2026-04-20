@@ -17,6 +17,7 @@ Problems:
 TO DO:
 - Write search function
 - Create filter (filtering by types)
+- add more data (moons or asteroids)
 
 
 Abandoned Ideas that are worth implementing later:
