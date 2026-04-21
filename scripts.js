@@ -207,10 +207,6 @@ function editMoonCard(card, moon) {
 //----------------------------------------------------------------------------
 //Filter 
 //want all search (names and types) to be in the search bar
-
-  
-// This calls the addCards() function when the page is first loaded
-//fix for slow loading and refreshes in chrome browser
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search");
   //search listener for typing
@@ -223,7 +219,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function runSearch() {
-   const query = searchInput.value.toLowerCase();
+  const searchInput = document.getElementById("search");
+  const query = searchInput.value.toLowerCase();
 
     filteredPlanets = planets.filter(p =>
       p.name.toLowerCase().includes(query) ||
@@ -237,7 +234,9 @@ function runSearch() {
       m.parent_planet.toLowerCase().includes(query) ||
       m.surface.toLowerCase().includes(query)
     );
+  showCards();
 }
+
 
 //-----------------------------------------------------------------------
 
