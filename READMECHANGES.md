@@ -7,6 +7,7 @@ Update 4 Changes made:
 
 TO DO:
 - make website accessible (no longer remote)
+- fix rotation period information (currently it is a proportion of an earth day, but I should change that to number of hours in a rotation)
 - continue visual optimization and code simplification
 - make sure I understand every step I wrote
 
