@@ -19,9 +19,9 @@
       <input type="search" id="search">
     </div>
 
-    <!--boxes/cards displaying the objects-->
-    <div id="card-container"></div>
-    <div class="card" id="template-card" style="display: none">
+    <!--boxes/cards displaying the planet objects-->
+    <div id="card-container-planet"></div>
+    <div class="card" id="planet-template" style="display: none">
       <div class="card-content">
         <!--removed built in bullet points and added placeholders for planet data-->
         <h2></h2>
@@ -33,10 +33,21 @@
         <ul class="planet-info"></ul>
       </div>
     </div>
+<!--boxes/cards displaying the moon objects-->
+    <div id="card-container-moon"></div>
+    <div class="card" id="moon-template" style="display: none">
+      <div class="card-content">
+        <h2></h2>
+        <img alt="" />
+        <p class="type">CLASSIFICATION: <span></span></p>
+        <p class="parent_planet">PARENT PLANET: <span></span></p>
+        <ul class="planet-info"></ul>
+      </div>
+    </div>
 
     <!--footer and buttons on page-->
     <div class="footer">
-      <!--TODO: Buttons that go straight to NASA home pages-->
+      <!--Button that goes straight to NASA home page-->
       <button onclick="NasaLink()">NASA Homepage</button>
     </div>
   </body>
