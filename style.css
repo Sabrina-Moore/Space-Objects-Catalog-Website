@@ -30,7 +30,7 @@ body {
 
 /*-------------------------------*/
 /*search bar*/
-.search-wrapper{
+.search_wrapper{
   display: flex;
   flex-direction: column;
   align-items: center;
