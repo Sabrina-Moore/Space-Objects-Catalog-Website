@@ -107,37 +107,37 @@ name: "Proteus", type: "Moon", parent_planet: "Neptune", surface: "Ice and Rock"
 
 //-----------------------------------------------------------------------------
 
-//filtered array
-let filteredPlanets = [...planets];
+//filtered arrays that are copies of the original arrays
+//used instead of array.filter() 
+let filteredPlanets = [...planets];  //spread syntax - that expands an array into elements
 let filteredMoons = [...moons];
 
 
 // This function adds cards to the page to display the data in the array
-//Each card will display the objects information and image
+//Builds containers dynamically to hold each card that will display the array elements
 function showCards() {
-  //debugging: checking if filtered array was actually an array
-  //console.log("planetsToShow:", planets);
-  //console.log("is array?", Array.isArray(planets));
 
-  const container = document.getElementById("card-container");
+  const container = document.getElementById("card-container"); //searches the DOM's version of the HTML page for card container and stores the reference (like a pointer) to that element in container
 
   //clear container
   container.innerHTML = "";
  
-
+  //searches HTML page for templates and stores the reference to that element
   const planetTemplate = document.getElementById("planet-template");
   const moonTemplate = document.getElementById("moon-template");
 
   //loop that creates planet card
   filteredPlanets.forEach(planet =>{
+    //copying card to create one card per object
     const cardClone = planetTemplate.cloneNode(true);
-    cardClone.style.display = "block";
+    cardClone.style.display = "block"; //makes card visible
     editPlanetCard(cardClone, planet);
-    container.appendChild(cardClone);
+    container.appendChild(cardClone); 
   });
 
   //loop that creates moon card
    filteredMoons.forEach(moon =>{
+     //copying card to create one card per object
     const cardClone = moonTemplate.cloneNode(true);
     cardClone.style.display = "block";
     editMoonCard(cardClone, moon);
@@ -154,20 +154,20 @@ function showCards() {
 function editPlanetCard(card, planet) {
 
   //fills placeholder spot with planet name
-  const cardHeader = card.querySelector("h2");
+  const cardHeader = card.querySelector("h2"); ////finds the h2 element inside card and stores in cardHeader
   cardHeader.textContent = planet.name;
 
   //planet image
   const cardImage = card.querySelector("img");
   cardImage.src = planet.image;
-  cardImage.alt = `${planet.name} image`; //what does this line do?
+  cardImage.alt = `${planet.name} image`; ////puts the value of planet.name into the template string (`${}`)
 
  //loop to fill placeholders with planet data
-  const fields = ["type", "surface", "moons", "day_length"];
+  const fields = ["type", "surface", "moons", "day_length"]; //array of properties from planets array
 
-  fields.forEach(field => { 
-    const element = card.querySelector(`.${field} span`);
-    element.textContent = planet[field];
+  fields.forEach(field => {   //loops through each string in the fields array and runs the following code
+    const element = card.querySelector(`.${field} span`); 
+    element.textContent = planet[field]; //dynamically finds the right element and returns all the text from element
   });
 
  //debugging
@@ -192,7 +192,7 @@ function editMoonCard(card, moon) {
 
   fields.forEach(field => { 
     const element = card.querySelector(`.${field} span`);
-    if(element){ //skips fields
+    if(element){ //skips fields in case they are blank
       element.textContent = moon[field];
     }
     else{
