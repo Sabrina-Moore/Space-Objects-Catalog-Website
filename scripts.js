@@ -210,15 +210,17 @@ function editMoonCard(card, moon) {
 
   
 // This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
-
+//fix for slow loading and refreshes in chrome browser
+document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search");
   //search listener for typing
   searchInput.addEventListener("input", runSearch);
   //search listener for enter
   searchInput.addEventListener("keydown", (e) => {
     if (e.key == "Enter") runSearch();
-  })
+  });
+   showCards();
+});
 
 function runSearch() {
    const query = searchInput.value.toLowerCase();
@@ -235,8 +237,6 @@ function runSearch() {
       m.parent_planet.toLowerCase().includes(query) ||
       m.surface.toLowerCase().includes(query)
     );
-
-    showCards();
 }
 
 //-----------------------------------------------------------------------
