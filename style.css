@@ -2,11 +2,15 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: #F2EAE0;
 }
 
 .main-header {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding-bottom: 10px;
+  background-image: url("https://assets.science.nasa.gov/content/dam/science/missions/webb/science/2022/07/STScI-01GA6KKWG229B16K4Q38CH3BXS.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
 }
 
 .title {
@@ -14,57 +18,132 @@ body {
   margin: 0;
   font-size: 8em;
   font-family: "Helvetica";
-  font-weight: normal;
-  color: white;
+  font-weight: bold;
+  color: #F2EAE0;
 }
 
+.intro{
+  font-size: 20px;
+  text-align: center;
+  
+}
+
+/*-------------------------------*/
+/*search bar*/
+.search-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.search_wrapper label {
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #08203b;
+  letter-spacing: 1px;
+}
+
+#search {
+  width: 250px;
+  padding: 10px 14px;
+  border: 1px solid #a7a7a7;
+  border-radius: 20px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+/* border changes when user clicks on it */
+#search:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(65, 130, 204, 0.4);
+}
+
+/*-------------------------------*/
+/*containers*/
 #card-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
   margin: 20px;
 }
 
 .card {
   width: 300px;
+  background: #08203b;
+  color: #F2EAE0;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 5px;
 }
 
-.card-content {
+/*hover effect*/
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/*all elements in the card*/
+.card-content { 
   padding: 20px;
   font-family: "Verdana";
-  color: #777;
+  color: #F2EAE0;
+
 }
 
-.card-content h2 {
-  margin-top: 0;
-  font-size: 20px;
+.type, .surface, .moons, .day_length, .parent_planet {
+  font-weight: bold;
+  text-align: center;
+}
+
+span {
+  font-weight: normal;
+  display:flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .card img {
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
+/*-------------------------------*/
 .footer {
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #08203b;
   padding: 10px;
 }
 
+
 button {
   text-align: center;
-  background-color: #666;
-  border: none;
+  background-color: #08203b;
+   border: 1px solid #4a90e2;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 15px;
+  box-shadow: 0 2px 4px rgba(2, 13, 80, 0.1);
   padding-left: 10px;
   padding-right: 10px;
   height: 40px;
-  border-radius: 10px;
-  color: white;
-  font-size: 22px;
+  color: #F2EAE0;
+  font-size: 30px;
   cursor: pointer;
-  margin: 5px;
+  margin: 20px;
+}
+
+button:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
