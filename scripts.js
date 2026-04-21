@@ -208,6 +208,10 @@ function editMoonCard(card, moon) {
 //Filter 
 //want all search (names and types) to be in the search bar
 
+  
+// This calls the addCards() function when the page is first loaded
+document.addEventListener("DOMContentLoaded", showCards);
+
   const searchInput = document.getElementById("search");
   //search listener for typing
   searchInput.addEventListener("input", runSearch);
@@ -235,12 +239,7 @@ function runSearch() {
     showCards();
 }
 
-//------------------------------------------------------------------------
-
-// This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
-
-
+//-----------------------------------------------------------------------
 
 //Changed button functions to link to the NASA Homepage
 function NasaLink(){
