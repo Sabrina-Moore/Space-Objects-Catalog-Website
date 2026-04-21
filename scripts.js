@@ -9,28 +9,28 @@ console.log(document.getElementById("search"));
 //moved urls inside the array
 const planets = [
   {
-    name: "Mercury", type: "Planet", surface: "Terrestrial", moons: 0, day_length: 58.64, image: "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar-system/mercury/images/messenger_high_resolution_view_of_mercury_pia_13840.jpg",
+    name: "Mercury", type: "Planet", surface: "Terrestrial", moons: 0, day_length: 1408, image: "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar-system/mercury/images/messenger_high_resolution_view_of_mercury_pia_13840.jpg",
   },
     {
-    name: "Venus", type: "Planet", surface: "Terrestrial", moons: 0, day_length: 243.01, image: "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/general/images/pia00271/PIA00271~large.jpg",
+    name: "Venus", type: "Planet", surface: "Terrestrial", moons: 0, day_length: 5832, image: "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/general/images/pia00271/PIA00271~large.jpg",
   },
     {
-    name: "Earth", type: "Planet", surface: "Terrestrial", moons: 1, day_length: 0.99, image: "https://www.nasa.gov/wp-content/uploads/2023/03/187_1003705_americas_dxm.png",
+    name: "Earth", type: "Planet", surface: "Terrestrial", moons: 1, day_length: 24, image: "https://www.nasa.gov/wp-content/uploads/2023/03/187_1003705_americas_dxm.png",
   },
     {
-    name: "Mars", type: "Planet", surface: "Terrestrial", moons: 2, day_length: 1.02, image: "https://images-assets.nasa.gov/image/PIA02653/PIA02653~large.jpg",
+    name: "Mars", type: "Planet", surface: "Terrestrial", moons: 2, day_length: 25, image: "https://images-assets.nasa.gov/image/PIA02653/PIA02653~large.jpg",
   },
     {
-    name: "Jupiter", type: "Planet", surface: "Gas Giant", moons: 95, day_length: 0.41, image: "https://images-assets.nasa.gov/image/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~large.jpg",
+    name: "Jupiter", type: "Planet", surface: "Gas Giant", moons: 95, day_length: 10, image: "https://images-assets.nasa.gov/image/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~large.jpg",
   },
     {
-  name: "Saturn", type: "Planet", surface: "Gas Giant", moons: 146, day_length: 0.44, image: "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia05/pia05389/jpeg/PIA05389.jpg",
+  name: "Saturn", type: "Planet", surface: "Gas Giant", moons: 146, day_length: 11, image: "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia05/pia05389/jpeg/PIA05389.jpg",
   },
     {
-  name: "Uranus", type: "Planet", surface: "Ice Giant", moons: 28, day_length: 0.71, image: "https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg",
+  name: "Uranus", type: "Planet", surface: "Ice Giant", moons: 28, day_length: 17, image: "https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg",
   },
     {
-  name: "Neptune", type: "Planet", surface: "Ice Giant", moons: 16, day_length: 0.67, image: "https://images-assets.nasa.gov/image/PIA01492/PIA01492~large.jpg",
+  name: "Neptune", type: "Planet", surface: "Ice Giant", moons: 16, day_length: 16, image: "https://images-assets.nasa.gov/image/PIA01492/PIA01492~large.jpg",
   },
 ];
 
