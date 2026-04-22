@@ -80,7 +80,7 @@ name: "Mimas", type: "Moon", parent_planet: "Saturn", surface: "Rock", image: "h
 name: "Hyperion", type: "Moon", parent_planet: "Saturn", surface: "Rock", image: "https://www.go-astronomy.com/images/moons/saturn-moon-hyperion.jpg",
 },
   {
-name: "Phobos", type: "Moon", parent_planet: "Saturn", surface: "Rock", image: "https://www.go-astronomy.com/images/moons/saturn-moon-phoebe.jpg",
+name: "Phoebe", type: "Moon", parent_planet: "Saturn", surface: "Rock", image: "https://www.go-astronomy.com/images/moons/saturn-moon-phoebe.jpg",
 },
   {
 name: "Titania", type: "Moon", parent_planet: "Uranus", surface: "Rock", image: "https://www.go-astronomy.com/images/moons/uranus-moon-titania.jpg",
