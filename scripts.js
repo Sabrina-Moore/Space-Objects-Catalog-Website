@@ -219,8 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function runSearch() {
-  const searchInput = document.getElementById("search");
-  const query = searchInput.value.toLowerCase();
+   const query = document.getElementById("search").value.toLowerCase();
 
     filteredPlanets = planets.filter(p =>
       p.name.toLowerCase().includes(query) ||
