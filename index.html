@@ -13,14 +13,32 @@
       <h1 class="title">Earth's Solar System</h1>
     </header>
     
-    <!--search bar-->
-    <div class="search_wrapper">
-      <label for="search">Search</label>
-      <input type="search" id="search">
+    <!--intro to the website-->
+        <div class="intro">
+      <p>Explore the eight planets and their largest moons. The search bar can filter by name, classification, surface type and parent planet. </p>
     </div>
 
-    <!--boxes/cards displaying the planet objects-->
-    <div id="card-container-planet"></div>
+    <!--search bar and filter -->
+    <div class="search_wrapper">
+      <label for="search">Search</label>
+      <input type="search" id="search" placeholder="Search planets or moons...">
+      
+      <!--drop down filter button-->
+     <!-- <select onchange="applyFilter(this.value)">
+        <option value="all">All</option>
+        <option value="planets">Planets</option>
+        <option value="moons">Moons</option>
+        <option value="Terrestrial">Planets</option>
+        <option value="Gas">Planets</option>
+        <option value="Ice">Planets</option>
+      </select> -->
+    </div>
+
+
+    <!--shared container-->
+    <div id="card-container"></div>
+
+q<!--container displaying the planet objects-->
     <div class="card" id="planet-template" style="display: none">
       <div class="card-content">
         <!--removed built in bullet points and added placeholders for planet data-->
@@ -33,14 +51,15 @@
         <ul class="planet-info"></ul>
       </div>
     </div>
-<!--boxes/cards displaying the moon objects-->
-    <div id="card-container-moon"></div>
+
+    <!--container displaying the moon objects-->
     <div class="card" id="moon-template" style="display: none">
       <div class="card-content">
         <h2></h2>
         <img alt="" />
         <p class="type">CLASSIFICATION: <span></span></p>
         <p class="parent_planet">PARENT PLANET: <span></span></p>
+        <p class="surface">SURFACE: <span></span></p>
         <ul class="planet-info"></ul>
       </div>
     </div>
