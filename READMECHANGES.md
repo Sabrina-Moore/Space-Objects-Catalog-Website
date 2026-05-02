@@ -19,7 +19,7 @@ One project that I've been slowly working on is a tool for a homebrew table-top 
 
 ## Overview
 
-### <p align="center">Features and completed work.</p>
+### <p align="center">Completed Work</p>
 
 In **update 1** (of 4), I created the two arrays of objects (Planets and Satellites), modified the already existing code to accept these new arrays, and changed the URL's. I wanted the code to still work with the already existing card containers. 
 
