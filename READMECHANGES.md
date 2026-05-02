@@ -39,7 +39,7 @@ At this point, I was ready to publish the website, but had quite about of code t
 
 After the development of the website, I still had a lot of minor changes and fixes to do. This included fixing the rotation period data to correctly show hours instead of proportions, working on website performance in google chrome (loading and refreshing issues) by manipulating the DOM elements, fixing multiple issues with the search features breaking, and continue visual optimization and code simplification. 
 
-I fixed mostly small things here: making the code prettier by removing or adding blank lines, fixing spelling mistakes, and a lot of css styling. I also changed the runSearch() function from using searchInput to document.getElemenyByID (why?).
+I fixed mostly small things here: making the code prettier by removing or adding blank lines, fixing spelling mistakes, and a lot of css styling. I also changed the runSearch() function from using searchInput to document.getElemenyByID to receive user input and search for it in one line.
 
 
 ---
