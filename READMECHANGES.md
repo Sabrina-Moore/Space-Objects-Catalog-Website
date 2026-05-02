@@ -52,6 +52,7 @@ In the future, I'd like to keep improving on this website, with changes like:
 - Converting scifi-calculator from C++ to javascript
 - Making models and visualizations for the orbit
 - Optimizing the performance of the website on mobile and google chrome
+- Currently the code has duplicate functions because of the two arrays, but in C++, I would be able to create a function that takes any array passed by the function call, so surely Javascript can do it too. I just need to figure out how. 
 
 
 ---
