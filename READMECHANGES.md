@@ -1,6 +1,6 @@
 # SEA Stage 2 - Celestial Object Catalog Project
 
-This catalog displays the planetary and satellite (moon) objects with cards that present information from an array (like size, or surface type). The main features are the card containers, which are reused from the original template and a search bar with a filter. 
+This catalog displays planetary and satellite (moon) objects with cards that present information from an array (like size, or surface type). The main features are the card containers, which are modified from the original template and a search bar with a filter. 
 
 ### <p align="center">When deciding on what this catalog should be about, I thought about what tools I'd like to develop for my personal life.</p>
 
