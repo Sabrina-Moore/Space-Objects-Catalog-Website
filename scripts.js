@@ -209,8 +209,10 @@ function editMoonCard(card, moon) {
 //want all search (names and types) to be in the search bar
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search");
+  const revSearchInput = document.getElementById("rev-search");
   //search listener for typing
   searchInput.addEventListener("input", runSearch);
+  revSearchInput.addEventListener("input", revSearch);
   //search listener for enter
   searchInput.addEventListener("keydown", (e) => {
     if (e.key == "Enter") runSearch();
@@ -232,6 +234,29 @@ function runSearch() {
       m.type.toLowerCase().includes(query) ||
       m.parent_planet.toLowerCase().includes(query) ||
       m.surface.toLowerCase().includes(query)
+    );
+  showCards();
+}
+
+function revSearch() {
+   const query = document.getElementById("rev-search").value.toLowerCase();
+
+   if (query == "") {
+      runSearch();
+      return;
+   }
+
+    filteredPlanets = planets.filter(p =>
+      !p.name.toLowerCase().includes(query) &&
+      !p.type.toLowerCase().includes(query) &&
+      !p.surface.toLowerCase().includes(query)
+    );
+
+    filteredMoons = moons.filter(m =>
+      !m.name.toLowerCase().includes(query) &&
+      !m.type.toLowerCase().includes(query) &&
+      !m.parent_planet.toLowerCase().includes(query) &&
+      !m.surface.toLowerCase().includes(query)
     );
   showCards();
 }
