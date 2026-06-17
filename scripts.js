@@ -210,9 +210,11 @@ function editMoonCard(card, moon) {
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search");
   const revSearchInput = document.getElementById("rev-search");
+
   //search listener for typing
   searchInput.addEventListener("input", runSearch);
   revSearchInput.addEventListener("input", revSearch);
+
   //search listener for enter
   searchInput.addEventListener("keydown", (e) => {
     if (e.key == "Enter") runSearch();
@@ -238,6 +240,7 @@ function runSearch() {
   showCards();
 }
 
+
 function revSearch() {
    const query = document.getElementById("rev-search").value.toLowerCase();
 
@@ -260,7 +263,6 @@ function revSearch() {
     );
   showCards();
 }
-
 
 //-----------------------------------------------------------------------
 
