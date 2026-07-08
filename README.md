@@ -19,6 +19,7 @@ This is intended to be a future resource for a Traveller Table-top Roleplaying G
 
 ---
 ##Features
+
 This JavaScript code uses an array of objects to populate empty data card containers in HTML and uses a search bar to filter the array properties.
 
 
