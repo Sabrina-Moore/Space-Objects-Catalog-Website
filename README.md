@@ -1,11 +1,10 @@
-# Traveller TTRPG Resources
-
+# Space Objects Catalog
 ---
 
 ## 📚 Table of Contents
 
 - [Overview](#Overview)
-- [Requirements](#requirements---your-catalog-website-should)
+- [Features](#Features)
 
 
 ---
@@ -16,7 +15,12 @@
 
 My goal was to create a catalog of planetary and satellite (moons) objects that have cards that present information (like size, distance from Earth) with a search function for easy lookup of different categories. 
 
-This is intended to be a future resource for a Traveller Table-top Roleplaying Game homebrew that I am designing to be set in this solar system. Since there will be fictional colonies and space stations in the system, I want to be able to catalog the different locations and features. This is the base model for Snap's SEA application, but I will continue to update this in a different repository called "Traveller TTRPG Resource Website." 
+This is intended to be a future resource for a Traveller Table-top Roleplaying Game homebrew that I am designing to be set in this solar system. This is the base model for Snap's SEA application, but I will continue to update this in a different repository called "Traveller TTRPG Resource Website." 
+
+---
+##Features
+This JavaScript code uses an array of objects to populate empty data card containers in HTML and uses a search bar to filter the array properties.
+
 
 ---
 
