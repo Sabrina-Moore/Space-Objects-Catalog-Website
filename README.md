@@ -17,10 +17,12 @@ My goal was to create a catalog of planetary and satellite (moons) objects that 
 
 This is intended to be a future resource for a Traveller Table-top Roleplaying Game homebrew that I am designing to be set in this solar system. This is the base model for Snap's SEA application, but I will continue to update this in a different repository called "Traveller TTRPG Resource Website." 
 
+This was my first ever JavaScript code, so my logic and comments heavily rely on C++ fundamentals.
+
 ---
 ##Features
 
-This JavaScript code uses an array of objects to populate empty data card containers in HTML and uses a search bar to filter the array properties.
+This JavaScript code uses two arrays of objects to populate empty data card containers in HTML and uses a search bar to filter the array properties. 
 
 
 ---
