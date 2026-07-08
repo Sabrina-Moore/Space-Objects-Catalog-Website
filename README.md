@@ -11,7 +11,7 @@
 
 ## Overview
 
-### <p align="center">Resources for a homebrew Traveller TTRPG.</p>
+### <p align="center">JavaScript website for Snap Engineering Academy Application.</p>
 
 My goal was to create a catalog of planetary and satellite (moons) objects that have cards that present information (like size, distance from Earth) with a search function for easy lookup of different categories. 
 
